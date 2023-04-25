@@ -1,0 +1,25 @@
+$default-font: 'Roboto', sans-serif;
+
+$primary-color: #FF0101;
+$secondary-color: #E60000;
+$third-olor: #020203;
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: $default-font;
+    min-height: 100%;
+}
+
+li {
+    list-style-type: none;
+}
