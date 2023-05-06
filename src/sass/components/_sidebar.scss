@@ -1,0 +1,36 @@
+.sidebar {
+    width: 90px;
+    background-color: black;
+    height: 100%;
+
+    p {
+        color: white;
+        transform: rotate(270deg);
+        position: absolute;
+        bottom: 105px;
+        left: -30px;
+        white-space: nowrap;
+        font-size: 13px;
+    }
+
+    .sports-tags {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        height: 60%;
+        padding-top: 150%;
+    }
+
+    i {
+        color: red;
+        background-color: white;
+        width: 53px;
+        height: 53px;
+        text-align: center;
+        padding: 12%;
+        font-size: 25px;
+        border-radius: 5px;
+    }
+
+}

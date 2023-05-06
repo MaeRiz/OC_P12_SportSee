@@ -1,1 +1,7 @@
 @import './settings';
+@import './mixins';
+@import './components/header';
+@import './components/sidebar';
+@import './pages/dashboard';
+@import './pages/inprogress';
+@import './pages/notfound';

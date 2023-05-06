@@ -1,0 +1,37 @@
+header {
+    display: flex;
+    background-color: $third-color;
+    color: white;
+    align-items: center;
+    position: relative;
+    font-size: 20px;
+    height: 68px;
+
+    .title {
+        color: $primary-color;
+    }
+
+    img {
+        margin: 14px 0 14px 26px;
+        width: 40px;
+    }
+
+    ul{
+        display: flex;
+        position: absolute;
+        right: 0;
+        width: 100%;
+        justify-content: space-between;
+        bottom: 50%;
+        transform: translate(0%, 50%);
+        padding: 0 55px 0 70px;
+
+        li {
+            color: white;
+        }
+    }
+
+    .active li{
+        color: rgb(255, 154, 154);
+    }
+}
