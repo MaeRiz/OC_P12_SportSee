@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import SideBar from "../components/SideBar";
 import getUserDatas from "../utils/getUserDatas";
 import BarChartComp from "../components/BarChartComp";
+import LineChartComp from "../components/LineChartComp";
 
 const Dashboard = () => {
   let { userId } = useParams();
@@ -26,6 +27,7 @@ const Dashboard = () => {
         </div>
         <div className="charts__container">
           <BarChartComp datas={user.activity.data.sessions} />
+          <LineChartComp datas={user.averageSessions.data.sessions} />
         </div>
       </div>
     </div>

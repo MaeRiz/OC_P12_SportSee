@@ -1,0 +1,29 @@
+.linechart__container {
+    height: 240px;
+    width: 240px;
+    background-color: $primary-color;
+    padding: 50px 10px 20px 10px;
+    border-radius: 5px;
+    position: relative;
+
+    .linechart__header {
+        &--title {
+            position: absolute;
+            color: #FFFFFF;
+            opacity: 0.5;
+            top: 20px;
+            left: 20px;
+        }
+    }
+
+    .custom-tooltip {
+        background-color: white;
+        color: black;
+        text-align: center;
+        font-size: 10px;
+
+        &--text {
+            padding: 10px;
+        }
+    }
+}
