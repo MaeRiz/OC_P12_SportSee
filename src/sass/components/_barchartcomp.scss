@@ -1,0 +1,43 @@
+.barchart__container {
+    background-color: #FBFBFB;
+    text-align: center;
+    width: 70%;
+    height: 250px;
+    padding: 20px 20px 30px 20px;
+
+    .barchart__header {
+        display: flex;
+        justify-content: space-between;
+        font-size: 13px;
+        margin-bottom: 10px;
+
+        &--legend {
+            justify-content: space-around;
+            width: 50%;
+            display: flex;
+
+            i {
+                font-size: 8px;
+            }
+
+            &--text-cal i {
+                color: $secondary-color;
+            }
+            
+            &--text-kg i {
+                color: $third-color;
+            }
+        }
+    }
+    
+    .custom-tooltip {
+        background-color: $secondary-color;
+        color: white;
+        text-align: center;
+        font-size: 10px;
+
+        &--text {
+            padding: 10px;
+        }
+    }
+}

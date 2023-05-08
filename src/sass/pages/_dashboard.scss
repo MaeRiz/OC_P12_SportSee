@@ -1,3 +1,24 @@
 #dashboard {
     height: calc(100% - 68px);
+    display: flex;
+}
+
+#page_content {
+    padding: 50px 50px 50px 70px;
+    width: 100%;
+    .welcome {
+        margin-bottom: 50px;
+        width: 100%;
+        &--title{
+            font-size: 50px;
+            font-weight: 500;
+            margin-bottom: 10px;
+
+            &-name {
+                color: $primary-color;
+            }
+        }
+
+        
+    }
 }
