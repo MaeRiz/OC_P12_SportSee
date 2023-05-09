@@ -3,6 +3,8 @@ import SideBar from "../components/SideBar";
 import getUserDatas from "../utils/getUserDatas";
 import BarChartComp from "../components/BarChartComp";
 import LineChartComp from "../components/LineChartComp";
+import RadarChartComp from "../components/RadarChartComp";
+import Nutritional from "../components/Nutritional";
 
 const Dashboard = () => {
   let { userId } = useParams();
@@ -25,9 +27,16 @@ const Dashboard = () => {
             Félicitation ! Vous avez explosé vos objectifs hier 👏
           </p>
         </div>
+
         <div className="charts__container">
           <BarChartComp datas={user.activity.data.sessions} />
           <LineChartComp datas={user.averageSessions.data.sessions} />
+          <RadarChartComp datas={user.performance.data.data} />
+        </div>
+        <div className="nutritional">
+          {Object.entries(user.userInfos.data.keyData).map((x) => (
+            <Nutritional key={x[0]} item={x} />
+          ))}
         </div>
       </div>
     </div>

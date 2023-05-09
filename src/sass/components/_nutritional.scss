@@ -1,0 +1,64 @@
+.nutritional__item{
+    background-color: #FBFBFB;
+    width: 90%;
+    height: 90px;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+    &--icon {
+        width: 45px;
+        height: 46px;
+        margin-right: 16px;
+        margin-left: 20px;
+        border-radius: 5px;
+        text-align: center;
+        padding-top: 8px;
+        font-size: 25px;
+    }
+
+    &--value {
+        font-weight: 600;
+    }
+
+    &--name {
+        font-weight: 500;
+        font-size: 12px;
+        color: #74798C;
+    }
+
+    &.calorie {
+        .nutritional__item--icon {
+            background-color: rgba($color: #FF0000, $alpha: 0.07);
+            i {
+                color: #FF0000;
+            }
+        }  
+    }
+    &.protein {
+        .nutritional__item--icon {
+            background-color: rgba($color: #4AB8FF, $alpha: 0.07);
+            i {
+                color: #4AB8FF;
+            }
+        }  
+    }
+    &.carbo {
+        .nutritional__item--icon {
+            background-color: rgba($color: #FDCC0C, $alpha: 0.07);
+            i {
+                color: #FDCC0C;
+            }
+        }  
+    }
+    &.lipid {
+        .nutritional__item--icon {
+            background-color: rgba($color: #FD5181, $alpha: 0.07);
+            i {
+                color: #FD5181;
+            }
+        }  
+    }
+
+}

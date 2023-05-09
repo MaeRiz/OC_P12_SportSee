@@ -4,10 +4,12 @@
 }
 
 #page_content {
-    padding: 50px 50px 50px 70px;
+    padding: 30px 30px 20px 50px;
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
     .welcome {
-        margin-bottom: 50px;
+        margin-bottom: 20px;
         width: 100%;
         &--title{
             font-size: 50px;
@@ -17,8 +19,21 @@
             &-name {
                 color: $primary-color;
             }
-        }
+        }     
+    }
 
-        
+    .charts__container {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 80%;
+    }
+
+    .nutritional {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 20%;
+
     }
 }
