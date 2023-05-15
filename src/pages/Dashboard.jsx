@@ -5,12 +5,14 @@ import BarChartComp from "../components/BarChartComp";
 import LineChartComp from "../components/LineChartComp";
 import RadarChartComp from "../components/RadarChartComp";
 import Nutritional from "../components/Nutritional";
+import RadialBarChartComp from "../components/RadialBarChartComp";
 
 const Dashboard = () => {
   let { userId } = useParams();
 
   const user = new getUserDatas("useMock");
   // const user = new getUserDatas(userId);
+
   return (
     <div id="dashboard">
       <SideBar />
@@ -31,6 +33,7 @@ const Dashboard = () => {
           <BarChartComp datas={user.activity} />
           <LineChartComp datas={user.averageSessions} />
           <RadarChartComp datas={user.performance} />
+          <RadialBarChartComp datas={user.score} />
         </div>
         <div className="nutritional">
           {Object.entries(user.userInfos.keyData).map((x) => (
