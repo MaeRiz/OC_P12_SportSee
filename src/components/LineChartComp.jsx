@@ -23,7 +23,7 @@ const LineChartComp = ({ datas }) => {
             bottom: 5,
           }}
         >
-          <XAxis tickLine={false} axisLine={false} />
+          <XAxis dataKey="day" tickLine={false} axisLine={false} />
           <Tooltip
             content={<CustomTooltip />}
             wrapperStyle={{ outline: "none" }}

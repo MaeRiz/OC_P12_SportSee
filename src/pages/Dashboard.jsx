@@ -11,7 +11,6 @@ const Dashboard = () => {
 
   const user = new getUserDatas("useMock");
   // const user = new getUserDatas(userId);
-
   return (
     <div id="dashboard">
       <SideBar />
@@ -20,7 +19,7 @@ const Dashboard = () => {
           <h3 className="welcome--title">
             Bonjour{" "}
             <span className="welcome--title-name">
-              {user.userInfos.data.userInfos.firstName}
+              {user.userInfos.userInfos.firstName}
             </span>
           </h3>
           <p className="welcome--goodjob">
@@ -29,12 +28,12 @@ const Dashboard = () => {
         </div>
 
         <div className="charts__container">
-          <BarChartComp datas={user.activity.data.sessions} />
-          <LineChartComp datas={user.averageSessions.data.sessions} />
-          <RadarChartComp datas={user.performance.data.data} />
+          <BarChartComp datas={user.activity} />
+          <LineChartComp datas={user.averageSessions} />
+          <RadarChartComp datas={user.performance} />
         </div>
         <div className="nutritional">
-          {Object.entries(user.userInfos.data.keyData).map((x) => (
+          {Object.entries(user.userInfos.keyData).map((x) => (
             <Nutritional key={x[0]} item={x} />
           ))}
         </div>
