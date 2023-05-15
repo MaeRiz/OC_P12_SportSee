@@ -1,6 +1,6 @@
 {
     "data": {
-        "userId": 12,
+        "userId": 54,
         "kind": {
             "1": "cardio",
             "2": "energy",
@@ -11,7 +11,7 @@
         },
         "data": [
             {
-                "value": 80,
+                "value": 70,
                 "kind": 1
             },
             {
@@ -23,15 +23,15 @@
                 "kind": 3
             },
             {
-                "value": 50,
+                "value": 51,
                 "kind": 4
             },
             {
-                "value": 200,
+                "value": 220,
                 "kind": 5
             },
             {
-                "value": 90,
+                "value": 93,
                 "kind": 6
             }
         ]

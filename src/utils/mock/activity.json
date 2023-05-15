@@ -1,21 +1,21 @@
 {
     "data": {
-        "userId": 12,
+        "userId": 54,
         "sessions": [
             {
                 "day": "2020-07-01",
-                "kilogram": 80,
+                "kilogram": 85,
                 "calories": 240
             },
             {
                 "day": "2020-07-02",
-                "kilogram": 80,
+                "kilogram": 82,
                 "calories": 220
             },
             {
                 "day": "2020-07-03",
                 "kilogram": 81,
-                "calories": 280
+                "calories": 260
             },
             {
                 "day": "2020-07-04",
@@ -34,8 +34,8 @@
             },
             {
                 "day": "2020-07-07",
-                "kilogram": 76,
-                "calories": 390
+                "kilogram": 75,
+                "calories": 399
             }
         ]
     }
