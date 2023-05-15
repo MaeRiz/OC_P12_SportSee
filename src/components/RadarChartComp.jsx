@@ -11,9 +11,14 @@ const RadarChartComp = ({ datas }) => {
   return (
     <div className="radarchart__container">
       <ResponsiveContainer width="100%" height="100%">
-        <RadarChart cx="50%" cy="50%" outerRadius="80%" data={datas}>
+        <RadarChart width="50%" height="50%" outerRadius="50%" data={datas}>
           <PolarGrid />
-          <PolarAngleAxis dataKey="kind" />
+          <PolarAngleAxis
+            dataKey="kind"
+            stroke="#FFFFFF"
+            fontSize={12}
+            tickLine={false}
+          />
           <Radar dataKey="value" fill="#FF0101B2" fillOpacity={0.7} />
         </RadarChart>
       </ResponsiveContainer>

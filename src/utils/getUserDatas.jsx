@@ -10,11 +10,15 @@ class getUserDatas {
       this.activity = this.formatActivity(datas.activity);
       this.performance = this.formatPerformance(datas.performance);
       this.averageSessions = this.formatAverageSessions(datas.averageSessions);
+      this.score = this.formatScore(this.userInfos);
     } else {
-      this.userInfos = this.getUserInfos();
-      this.activity = this.getActivity();
-      this.performance = this.getPerformance();
-      this.averageSessions = this.getAverageSessions();
+      this.userInfos = this.formatUserInfos(this.getUserInfos());
+      this.activity = this.formatActivity(this.getActivity());
+      this.performance = this.formatPerformance(this.getPerformance());
+      this.averageSessions = this.formatAverageSessions(
+        this.getAverageSessions()
+      );
+      this.score = this.formatScore(this.userInfos);
     }
   }
 
@@ -87,6 +91,14 @@ class getUserDatas {
       });
     });
     return newDatas;
+  }
+
+  formatScore(datas) {
+    return [
+      {
+        value: datas.todayScore * 100,
+      },
+    ];
   }
 }
 

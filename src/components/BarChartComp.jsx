@@ -35,8 +35,20 @@ const BarChartComp = ({ datas }) => {
         >
           <CartesianGrid strokeDasharray="2" vertical={false} />
 
-          <XAxis dataKey="day" tickLine={false} axisLine={false} />
-          <YAxis orientation="right" tickLine={false} axisLine={false} />
+          <XAxis
+            dataKey="day"
+            tickLine={false}
+            axisLine={false}
+            fontSize={15}
+            opacity={0.7}
+          />
+          <YAxis
+            orientation="right"
+            tickLine={false}
+            axisLine={false}
+            fontSize={15}
+            opacity={0.7}
+          />
           <Tooltip
             content={<CustomTooltip />}
             wrapperStyle={{ outline: "none" }}
