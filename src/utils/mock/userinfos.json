@@ -3,15 +3,15 @@
         "id": 54,
         "userInfos": {
             "firstName": "Maé",
-            "lastName": "Dovineau",
+            "lastName": "Go",
             "age": 23
         },
         "todayScore": 0.54,
         "keyData": {
-            "calorieCount": 2130,
-            "proteinCount": 199,
-            "carbohydrateCount": 560,
-            "lipidCount": 34
+            "calorieCount": 1,
+            "proteinCount": 20,
+            "carbohydrateCount": 300,
+            "lipidCount": 4000
         }
     }
 }
