@@ -1,38 +1,51 @@
 import getUserDatasByMock from "./mock/getUserDatasByMock";
 
-class getUserDatas {
-  constructor(userId) {
-    this.userId = userId;
-    if (this.userId === "useMock") {
-      const datas = new getUserDatasByMock();
+const URL_API = "http://localhost:3000/user/";
 
-      this.userInfos = this.formatUserInfos(datas.userInfos);
-      this.activity = this.formatActivity(datas.activity);
-      this.performance = this.formatPerformance(datas.performance);
-      this.averageSessions = this.formatAverageSessions(datas.averageSessions);
-      this.score = this.formatScore(this.userInfos);
-    } else {
-      this.userInfos = this.formatUserInfos(this.getUserInfos());
-      this.activity = this.formatActivity(this.getActivity());
-      this.performance = this.formatPerformance(this.getPerformance());
-      this.averageSessions = this.formatAverageSessions(
-        this.getAverageSessions()
-      );
-      this.score = this.formatScore(this.userInfos);
+export async function getUserDatas(id) {
+  if (id === "useMock") {
+    const mocksDatas = new getUserDatasByMock();
+    const userDatas = new makeUserDatas(
+      mocksDatas.userInfos,
+      mocksDatas.activity,
+      mocksDatas.performance,
+      mocksDatas.averageSessions
+    );
+    return userDatas;
+  } else {
+    let response = await fetch(URL_API + id);
+
+    if (!response.ok) {
+      return "404";
     }
-  }
+    let userinfos_fetch_data = await response.json();
 
-  getUserInfos() {
-    return null;
+    response = await fetch(`${URL_API + id}/activity`);
+    let activity_fetch_data = await response.json();
+
+    response = await fetch(`${URL_API + id}/performance`);
+    let performance_fetch_data = await response.json();
+
+    response = await fetch(`${URL_API + id}/average-sessions`);
+    let averageSessions_fetch_data = await response.json();
+
+    const userDatas = new makeUserDatas(
+      userinfos_fetch_data,
+      activity_fetch_data,
+      performance_fetch_data,
+      averageSessions_fetch_data
+    );
+    return userDatas;
   }
-  getActivity() {
-    return null;
-  }
-  getPerformance() {
-    return null;
-  }
-  getAverageSessions() {
-    return null;
+}
+
+class makeUserDatas {
+  constructor(userInfos, activity, performance, averageSessions) {
+    this.userInfos = this.formatUserInfos(userInfos);
+    this.activity = this.formatActivity(activity);
+    this.performance = this.formatPerformance(performance);
+    this.averageSessions = this.formatAverageSessions(averageSessions);
+    this.score = this.formatScore(this.userInfos);
   }
 
   formatUserInfos(datas) {
@@ -94,12 +107,16 @@ class getUserDatas {
   }
 
   formatScore(datas) {
+    let value = 0;
+    if (!datas.todayScore) {
+      value = datas.score * 100;
+    } else {
+      value = datas.todayScore * 100;
+    }
     return [
       {
-        value: datas.todayScore * 100,
+        value: value,
       },
     ];
   }
 }
-
-export default getUserDatas;
