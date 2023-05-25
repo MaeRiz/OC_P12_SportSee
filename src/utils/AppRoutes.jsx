@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "../pages/Home";
 import Dashboard from "../pages/Dashboard";
 import InProgress from "../pages/InProgress";
 import NotFound from "../pages/NotFound";
@@ -7,7 +6,7 @@ import NotFound from "../pages/NotFound";
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<InProgress />} />
       <Route path="/user/:userId" element={<Dashboard />} />
       <Route path="/settings" element={<InProgress />} />
       <Route path="/community" element={<InProgress />} />
