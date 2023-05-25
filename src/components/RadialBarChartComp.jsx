@@ -4,6 +4,7 @@ import {
   RadialBar,
   PolarAngleAxis,
 } from "recharts";
+import PropTypes from "prop-types";
 
 const RadialBarChartComp = ({ datas }) => {
   return (
@@ -39,6 +40,14 @@ const RadialBarChartComp = ({ datas }) => {
       </ResponsiveContainer>
     </div>
   );
+};
+
+RadialBarChartComp.propTypes = {
+  datas: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.number.isRequired,
+    }).isRequired
+  ).isRequired,
 };
 
 export default RadialBarChartComp;

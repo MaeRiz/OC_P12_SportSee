@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Nutritional = ({ item }) => {
   if (item[0] === "calorieCount") {
     return (
@@ -54,4 +56,9 @@ const Nutritional = ({ item }) => {
     );
   }
 };
+
+Nutritional.propTypes = {
+  item: PropTypes.array.isRequired,
+};
+
 export default Nutritional;

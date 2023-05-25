@@ -72,7 +72,13 @@ const BarChartComp = ({ datas }) => {
 };
 
 BarChartComp.propTypes = {
-  datas: PropTypes.array,
+  datas: PropTypes.arrayOf(
+    PropTypes.shape({
+      day: PropTypes.number.isRequired,
+      kilogram: PropTypes.number.isRequired,
+      calories: PropTypes.number.isRequired,
+    }).isRequired
+  ).isRequired,
 };
 
 const CustomTooltip = ({ active, payload }) => {

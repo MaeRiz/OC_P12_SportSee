@@ -27,7 +27,12 @@ const RadarChartComp = ({ datas }) => {
 };
 
 RadarChartComp.propTypes = {
-  datas: PropTypes.array,
+  datas: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.number.isRequired,
+      kind: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
 };
 
 export default RadarChartComp;

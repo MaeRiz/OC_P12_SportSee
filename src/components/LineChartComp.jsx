@@ -50,7 +50,12 @@ const LineChartComp = ({ datas }) => {
 };
 
 LineChartComp.propTypes = {
-  datas: PropTypes.array,
+  datas: PropTypes.arrayOf(
+    PropTypes.shape({
+      day: PropTypes.string.isRequired,
+      sessionLength: PropTypes.number.isRequired,
+    }).isRequired
+  ).isRequired,
 };
 
 const CustomTooltip = ({ active, payload }) => {
