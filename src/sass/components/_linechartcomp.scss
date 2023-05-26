@@ -2,9 +2,9 @@
     height: 240px;
     width: 32%;
     background-color: $primary-color;
-    padding: 50px 10px 20px 10px;
     border-radius: 5px;
     position: relative;
+    overflow: hidden;
 
     .linechart__header {
         &--title {

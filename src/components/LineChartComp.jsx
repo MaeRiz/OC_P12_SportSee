@@ -11,16 +11,33 @@ const LineChartComp = ({ datas }) => {
           sessions
         </p>
       </div>
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer
+        width="100%"
+        height="100%"
+        className="chart_container"
+      >
         <LineChart
           width={500}
           height={300}
           data={datas}
           margin={{
-            top: 5,
+            top: 30,
             right: 30,
             left: 20,
             bottom: 5,
+          }}
+          onMouseMove={(event) => {
+            const container = document.getElementsByClassName(
+              "linechart__container"
+            )[0];
+            if (event.activeCoordinate) {
+              const mouseXpercentage = Math.round(
+                (event.activeCoordinate.x / container.clientWidth) * 100
+              );
+              container.style.background = `linear-gradient(90deg, rgba(255,0,0,1) ${mouseXpercentage}%, rgba(220,0,0,1) ${mouseXpercentage}%)`;
+            } else {
+              container.style.background = `#FF0000`;
+            }
           }}
         >
           <XAxis
@@ -34,6 +51,7 @@ const LineChartComp = ({ datas }) => {
           <Tooltip
             content={<CustomTooltip />}
             wrapperStyle={{ outline: "none" }}
+            cursor={false}
           />
           <Line
             type="monotone"
